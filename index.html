@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+  body { background: #ffdde1; background: linear-gradient(#ffdde1, #ee9ca7); height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; overflow:hidden; }
+  .container { padding:20px; }
+  .gif { width:200px; border-radius:20px; margin-bottom:20px; }
+  h1 { font-size:28px; color:#d6336c; margin-bottom:30px; }
+  .btns { display:flex; justify-content:center; gap:20px; position:relative; height:60px; }
+  button { padding:15px 35px; font-size:18px; font-weight:bold; border:none; border-radius:50px; cursor:pointer; }
+  #yesBtn { background:#ff4d6d; color:white; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
+  #noBtn { background:white; color:#333; position:absolute; left: 170px; transition:0.2s; }
+  #love { display:none; }
+  #love h1 { font-size:32px; }
+</style>
+</head>
+<body>
+  <div class="container" id="main">
+    <img src="https://media.tenor.com/2q8t1b8j0gYAAAAC/cute-cat.gif" class="gif">
+    <h1>Will You Be My Valentine? 🥺❤️</h1>
+    <div class="btns">
+      <button id="yesBtn" onclick="yesClick()">Yes ❤️</button>
+      <button id="noBtn" onmouseover="moveNo()" onclick="moveNo()">No 🙈</button>
+    </div>
+    <p style="margin-top:20px; color:#888; font-size:13px;">No කියන්න බෑ හොඳේ 😜</p>
+  </div>
+
+  <div class="container" id="love">
+    <img src="https://media.tenor.com/gUiu1zyxfTUAAAAC/bear-kiss-bear-kisses.gif" class="gif">
+    <h1>I Knew It! 😍❤️<br>I Love You So Much!</h1>
+    <p style="font-size:18px;">Screenshot එකක් ගහලා මට එවන්න 🥰</p>
+  </div>
+
+<script>
+  function moveNo(){
+    var btn = document.getElementById('noBtn');
+    var x = Math.random() * (window.innerWidth - 120);
+    var y = Math.random() * (window.innerHeight - 80);
+    btn.style.position = 'fixed';
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+  }
+  function yesClick(){
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('love').style.display = 'block';
+    document.body.style.background = '#ff4d6d';
+  }
+</script>
+</body>
+    </html>
